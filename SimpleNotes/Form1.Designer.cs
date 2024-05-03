@@ -28,147 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.boxTitle = new System.Windows.Forms.TextBox();
-            this.boxNote = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.previousNotes = new System.Windows.Forms.DataGridView();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnNewNote = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.previousNotes)).BeginInit();
+            this.txt_mainNote = new System.Windows.Forms.TextBox();
+            this.btn_addNote = new System.Windows.Forms.Button();
+            this.txt_title = new System.Windows.Forms.TextBox();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // boxTitle
+            // txt_mainNote
             // 
-            this.boxTitle.Location = new System.Drawing.Point(371, 32);
-            this.boxTitle.Name = "boxTitle";
-            this.boxTitle.Size = new System.Drawing.Size(417, 23);
-            this.boxTitle.TabIndex = 0;
+            this.txt_mainNote.BackColor = System.Drawing.Color.LightCyan;
+            this.txt_mainNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_mainNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_mainNote.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_mainNote.Location = new System.Drawing.Point(10, 10);
+            this.txt_mainNote.Margin = new System.Windows.Forms.Padding(10);
+            this.txt_mainNote.Multiline = true;
+            this.txt_mainNote.Name = "txt_mainNote";
+            this.txt_mainNote.PlaceholderText = "Note";
+            this.txt_mainNote.Size = new System.Drawing.Size(781, 374);
+            this.txt_mainNote.TabIndex = 1;
             // 
-            // boxNote
+            // btn_addNote
             // 
-            this.boxNote.Location = new System.Drawing.Point(371, 81);
-            this.boxNote.Multiline = true;
-            this.boxNote.Name = "boxNote";
-            this.boxNote.Size = new System.Drawing.Size(417, 357);
-            this.boxNote.TabIndex = 1;
+            this.btn_addNote.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_addNote.FlatAppearance.BorderSize = 0;
+            this.btn_addNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addNote.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_addNote.Location = new System.Drawing.Point(10, 4);
+            this.btn_addNote.Name = "btn_addNote";
+            this.btn_addNote.Size = new System.Drawing.Size(45, 45);
+            this.btn_addNote.TabIndex = 9;
+            this.btn_addNote.Text = "+";
+            this.btn_addNote.UseVisualStyleBackColor = false;
+            this.btn_addNote.Click += new System.EventHandler(this.btn_addNote_Click);
             // 
-            // label1
+            // txt_title
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(371, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Title";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txt_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_title.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.txt_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_title.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_title.Location = new System.Drawing.Point(61, 4);
+            this.txt_title.Name = "txt_title";
+            this.txt_title.PlaceholderText = "Title";
+            this.txt_title.Size = new System.Drawing.Size(674, 37);
+            this.txt_title.TabIndex = 0;
             // 
-            // label2
+            // btn_delete
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(371, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Note";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_delete.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_delete.FlatAppearance.BorderSize = 0;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_delete.Location = new System.Drawing.Point(746, 4);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_delete.TabIndex = 10;
+            this.btn_delete.Text = "X";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // previousNotes
+            // panel1
             // 
-            this.previousNotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.previousNotes.BackgroundColor = System.Drawing.Color.White;
-            this.previousNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.previousNotes.Location = new System.Drawing.Point(12, 12);
-            this.previousNotes.Name = "previousNotes";
-            this.previousNotes.RowTemplate.Height = 25;
-            this.previousNotes.Size = new System.Drawing.Size(353, 346);
-            this.previousNotes.TabIndex = 4;
-            this.previousNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.previousNotes_CellDoubleClick);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.White;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLoad.Location = new System.Drawing.Point(12, 364);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(173, 34);
-            this.btnLoad.TabIndex = 6;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(192, 364);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(173, 34);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(191, 404);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(173, 34);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnNewNote
-            // 
-            this.btnNewNote.BackColor = System.Drawing.Color.White;
-            this.btnNewNote.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewNote.Location = new System.Drawing.Point(12, 404);
-            this.btnNewNote.Name = "btnNewNote";
-            this.btnNewNote.Size = new System.Drawing.Size(173, 34);
-            this.btnNewNote.TabIndex = 9;
-            this.btnNewNote.Text = "New Note";
-            this.btnNewNote.UseVisualStyleBackColor = false;
-            this.btnNewNote.Click += new System.EventHandler(this.btnNewNote_Click);
+            this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.Controls.Add(this.txt_mainNote);
+            this.panel1.Location = new System.Drawing.Point(0, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(801, 394);
+            this.panel1.TabIndex = 11;
             // 
             // NoteTaker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnNewNote);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.previousNotes);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.boxNote);
-            this.Controls.Add(this.boxTitle);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_addNote);
+            this.Controls.Add(this.txt_title);
             this.Name = "NoteTaker";
             this.Text = "NoteTaker";
-            this.Load += new System.EventHandler(this.NoteTaker_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.previousNotes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox boxTitle;
-        private TextBox boxNote;
-        private Label label1;
-        private Label label2;
-        private DataGridView previousNotes;
-        private Button btnLoad;
-        private Button btnDelete;
-        private Button btnSave;
-        private Button btnNewNote;
+        private TextBox txt_mainNote;
+        private Button btn_addNote;
+        private TextBox txt_title;
+        private Button btn_delete;
+        private Panel panel1;
     }
 }
