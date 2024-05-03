@@ -46,7 +46,7 @@
             this.txt_mainNote.Multiline = true;
             this.txt_mainNote.Name = "txt_mainNote";
             this.txt_mainNote.PlaceholderText = "Note";
-            this.txt_mainNote.Size = new System.Drawing.Size(781, 374);
+            this.txt_mainNote.Size = new System.Drawing.Size(305, 216);
             this.txt_mainNote.TabIndex = 1;
             // 
             // btn_addNote
@@ -55,7 +55,7 @@
             this.btn_addNote.FlatAppearance.BorderSize = 0;
             this.btn_addNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addNote.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_addNote.Location = new System.Drawing.Point(746, 5);
+            this.btn_addNote.Location = new System.Drawing.Point(270, 5);
             this.btn_addNote.Name = "btn_addNote";
             this.btn_addNote.Size = new System.Drawing.Size(45, 45);
             this.btn_addNote.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.txt_title.Location = new System.Drawing.Point(10, 9);
             this.txt_title.Name = "txt_title";
             this.txt_title.PlaceholderText = "Title";
-            this.txt_title.Size = new System.Drawing.Size(725, 37);
+            this.txt_title.Size = new System.Drawing.Size(249, 37);
             this.txt_title.TabIndex = 0;
             // 
             // panel1
@@ -83,7 +83,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 56);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(801, 394);
+            this.panel1.Size = new System.Drawing.Size(325, 236);
             this.panel1.TabIndex = 11;
             // 
             // NoteTaker
@@ -91,10 +91,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(324, 291);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_addNote);
             this.Controls.Add(this.txt_title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NoteTaker";
             this.Text = "NoteTaker";
             this.panel1.ResumeLayout(false);

@@ -61,7 +61,7 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_delete.Image = global::SimpleNotes.Properties.Resources.close;
-            this.btn_delete.Location = new System.Drawing.Point(38, 0);
+            this.btn_delete.Location = new System.Drawing.Point(292, 0);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(20, 20);
             this.btn_delete.TabIndex = 10;
@@ -90,17 +90,17 @@
             this.txt_title.Name = "txt_title";
             this.txt_title.PlaceholderText = "Title";
             this.txt_title.ReadOnly = true;
-            this.txt_title.Size = new System.Drawing.Size(725, 37);
+            this.txt_title.Size = new System.Drawing.Size(249, 37);
             this.txt_title.TabIndex = 2;
             this.txt_title.TabStop = false;
             // 
             // pnl_topBar
             // 
             this.pnl_topBar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.pnl_topBar.Location = new System.Drawing.Point(77, 0);
+            this.pnl_topBar.Location = new System.Drawing.Point(0, 0);
             this.pnl_topBar.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_topBar.Name = "pnl_topBar";
-            this.pnl_topBar.Size = new System.Drawing.Size(724, 20);
+            this.pnl_topBar.Size = new System.Drawing.Size(247, 20);
             this.pnl_topBar.TabIndex = 13;
             this.pnl_topBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseMove);
             // 
@@ -112,7 +112,7 @@
             this.btn_pin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pin.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_pin.Image = global::SimpleNotes.Properties.Resources.pin;
-            this.btn_pin.Location = new System.Drawing.Point(12, 0);
+            this.btn_pin.Location = new System.Drawing.Point(258, 0);
             this.btn_pin.Name = "btn_pin";
             this.btn_pin.Size = new System.Drawing.Size(20, 20);
             this.btn_pin.TabIndex = 14;
@@ -125,7 +125,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(324, 314);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_pin);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.txt_title);
@@ -133,7 +134,6 @@
             this.Controls.Add(this.pnl_topBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StickyNoteForm";
-            this.Text = "NoteTaker";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
