@@ -58,7 +58,7 @@
             this.btn_addNote.Location = new System.Drawing.Point(746, 5);
             this.btn_addNote.Name = "btn_addNote";
             this.btn_addNote.Size = new System.Drawing.Size(45, 45);
-            this.btn_addNote.TabIndex = 9;
+            this.btn_addNote.TabIndex = 2;
             this.btn_addNote.Text = "+";
             this.btn_addNote.UseVisualStyleBackColor = false;
             this.btn_addNote.Click += new System.EventHandler(this.btn_addNote_Click);
@@ -70,7 +70,7 @@
             this.txt_title.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txt_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_title.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_title.Location = new System.Drawing.Point(10, 4);
+            this.txt_title.Location = new System.Drawing.Point(10, 9);
             this.txt_title.Name = "txt_title";
             this.txt_title.PlaceholderText = "Title";
             this.txt_title.Size = new System.Drawing.Size(725, 37);

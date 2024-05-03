@@ -22,11 +22,6 @@ namespace SimpleNotes
             txt_mainNote.Text = mainNote;
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void pnl_topBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -34,6 +29,17 @@ namespace SimpleNotes
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_pin_Click(object sender, EventArgs e)
+        {
+            TopMost = !TopMost;
+            btn_pin.Image = TopMost ? global::SimpleNotes.Properties.Resources.unpin : global::SimpleNotes.Properties.Resources.pin;
         }
     }
 }
