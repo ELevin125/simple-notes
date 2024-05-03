@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.txt_mainNote = new System.Windows.Forms.TextBox();
-            this.txt_title = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_title = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,21 +46,10 @@
             this.txt_mainNote.Multiline = true;
             this.txt_mainNote.Name = "txt_mainNote";
             this.txt_mainNote.PlaceholderText = "Note";
+            this.txt_mainNote.ReadOnly = true;
             this.txt_mainNote.Size = new System.Drawing.Size(781, 374);
             this.txt_mainNote.TabIndex = 1;
-            // 
-            // txt_title
-            // 
-            this.txt_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_title.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.txt_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_title.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_title.Location = new System.Drawing.Point(10, 4);
-            this.txt_title.Name = "txt_title";
-            this.txt_title.PlaceholderText = "Title";
-            this.txt_title.Size = new System.Drawing.Size(725, 37);
-            this.txt_title.TabIndex = 0;
+            this.txt_mainNote.TabStop = false;
             // 
             // btn_delete
             // 
@@ -87,15 +76,30 @@
             this.panel1.Size = new System.Drawing.Size(801, 394);
             this.panel1.TabIndex = 11;
             // 
+            // txt_title
+            // 
+            this.txt_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_title.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.txt_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_title.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_title.Location = new System.Drawing.Point(10, 4);
+            this.txt_title.Name = "txt_title";
+            this.txt_title.PlaceholderText = "Title";
+            this.txt_title.ReadOnly = true;
+            this.txt_title.Size = new System.Drawing.Size(725, 37);
+            this.txt_title.TabIndex = 2;
+            this.txt_title.TabStop = false;
+            // 
             // StickyNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_title);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.txt_title);
             this.Name = "StickyNoteForm";
             this.Text = "NoteTaker";
             this.panel1.ResumeLayout(false);
@@ -107,8 +111,8 @@
 
         #endregion
         private TextBox txt_mainNote;
-        private TextBox txt_title;
         private Button btn_delete;
         private Panel panel1;
+        private TextBox txt_title;
     }
 }

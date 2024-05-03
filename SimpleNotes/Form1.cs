@@ -10,6 +10,7 @@ namespace SimpleNotes
         public NoteTaker()
         {
             InitializeComponent();
+            this.ActiveControl = txt_mainNote;
         }
 
         private void btn_addNote_Click(object sender, EventArgs e)

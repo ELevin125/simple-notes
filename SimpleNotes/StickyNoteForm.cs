@@ -17,15 +17,11 @@ namespace SimpleNotes
             InitializeComponent();
             txt_title.Text = title;
             txt_mainNote.Text = mainNote;
-
-            // Lock text fields and hide buttons
-            txt_title.ReadOnly = true;
-            txt_mainNote.ReadOnly = true;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
