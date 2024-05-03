@@ -32,6 +32,7 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_title = new System.Windows.Forms.TextBox();
+            this.pnl_topBar = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,20 +48,20 @@
             this.txt_mainNote.Name = "txt_mainNote";
             this.txt_mainNote.PlaceholderText = "Note";
             this.txt_mainNote.ReadOnly = true;
-            this.txt_mainNote.Size = new System.Drawing.Size(781, 374);
+            this.txt_mainNote.Size = new System.Drawing.Size(781, 364);
             this.txt_mainNote.TabIndex = 1;
             this.txt_mainNote.TabStop = false;
             // 
             // btn_delete
             // 
             this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_delete.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btn_delete.BackColor = System.Drawing.Color.LightCyan;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Font = new System.Drawing.Font("Open Sans ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_delete.Location = new System.Drawing.Point(746, 4);
+            this.btn_delete.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_delete.Location = new System.Drawing.Point(751, 23);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(45, 45);
+            this.btn_delete.Size = new System.Drawing.Size(40, 40);
             this.btn_delete.TabIndex = 10;
             this.btn_delete.Text = "X";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -70,20 +71,20 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
             this.panel1.Controls.Add(this.txt_mainNote);
-            this.panel1.Location = new System.Drawing.Point(0, 56);
+            this.panel1.Location = new System.Drawing.Point(0, 66);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(801, 394);
+            this.panel1.Size = new System.Drawing.Size(801, 384);
             this.panel1.TabIndex = 11;
             // 
             // txt_title
             // 
             this.txt_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_title.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.txt_title.BackColor = System.Drawing.Color.LightCyan;
             this.txt_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_title.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_title.Location = new System.Drawing.Point(10, 4);
+            this.txt_title.Location = new System.Drawing.Point(10, 23);
             this.txt_title.Name = "txt_title";
             this.txt_title.PlaceholderText = "Title";
             this.txt_title.ReadOnly = true;
@@ -91,15 +92,28 @@
             this.txt_title.TabIndex = 2;
             this.txt_title.TabStop = false;
             // 
+            // pnl_topBar
+            // 
+            this.pnl_topBar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.pnl_topBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_topBar.Location = new System.Drawing.Point(0, 0);
+            this.pnl_topBar.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_topBar.Name = "pnl_topBar";
+            this.pnl_topBar.Size = new System.Drawing.Size(800, 20);
+            this.pnl_topBar.TabIndex = 13;
+            this.pnl_topBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseMove);
+            // 
             // StickyNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txt_title);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_topBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StickyNoteForm";
             this.Text = "NoteTaker";
             this.panel1.ResumeLayout(false);
@@ -114,5 +128,6 @@
         private Button btn_delete;
         private Panel panel1;
         private TextBox txt_title;
+        private Panel pnl_topBar;
     }
 }
