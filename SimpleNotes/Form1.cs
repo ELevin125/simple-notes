@@ -14,12 +14,8 @@ namespace SimpleNotes
 
         private void btn_addNote_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-
+            var stickyNoteForm = new StickyNoteForm(txt_title.Text, txt_mainNote.Text);
+            stickyNoteForm.Show();
         }
     }
 }
