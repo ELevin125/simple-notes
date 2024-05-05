@@ -50,6 +50,8 @@ namespace SimpleNotes
 
             txt_mainNote.Text = noteContent;
             IsEditable = canEdit;
+
+            StickyNoteManager.AddOpenStickyNoteForm(this);
         }
 
         private void pnl_topBar_MouseMove(object sender, MouseEventArgs e)
@@ -64,6 +66,7 @@ namespace SimpleNotes
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            StickyNoteManager.RemoveOpenStickyNoteForm(this);
             Close();
         }
 
