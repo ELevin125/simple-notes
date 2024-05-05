@@ -33,12 +33,13 @@
             this.txt_mainNote = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.imgList_toolbar = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_main = new System.Windows.Forms.Panel();
             this.pnl_topBar = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_pin = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnl_highlight = new System.Windows.Forms.Panel();
+            this.panel_main.SuspendLayout();
             this.pnl_topBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,17 +89,17 @@
             this.imgList_toolbar.Images.SetKeyName(3, "close.png");
             this.imgList_toolbar.Images.SetKeyName(4, "save.png");
             // 
-            // panel1
+            // panel_main
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightCyan;
-            this.panel1.Controls.Add(this.txt_mainNote);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 23);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(324, 291);
-            this.panel1.TabIndex = 11;
+            this.panel_main.BackColor = System.Drawing.Color.LightCyan;
+            this.panel_main.Controls.Add(this.txt_mainNote);
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_main.Location = new System.Drawing.Point(0, 25);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Padding = new System.Windows.Forms.Padding(10);
+            this.panel_main.Size = new System.Drawing.Size(324, 289);
+            this.panel_main.TabIndex = 11;
             // 
             // pnl_topBar
             // 
@@ -112,6 +113,7 @@
             this.pnl_topBar.Name = "pnl_topBar";
             this.pnl_topBar.Size = new System.Drawing.Size(325, 26);
             this.pnl_topBar.TabIndex = 13;
+            this.pnl_topBar.MouseLeave += new System.EventHandler(this.pnl_topBar_MouseLeave);
             this.pnl_topBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseMove);
             // 
             // btn_save
@@ -171,6 +173,16 @@
             this.btn_pin.UseVisualStyleBackColor = false;
             this.btn_pin.Click += new System.EventHandler(this.btn_pin_Click);
             // 
+            // pnl_highlight
+            // 
+            this.pnl_highlight.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.pnl_highlight.Location = new System.Drawing.Point(0, 0);
+            this.pnl_highlight.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_highlight.Name = "pnl_highlight";
+            this.pnl_highlight.Size = new System.Drawing.Size(325, 15);
+            this.pnl_highlight.TabIndex = 2;
+            this.pnl_highlight.MouseEnter += new System.EventHandler(this.pnl_highlight_MouseEnter);
+            // 
             // StickyNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -178,12 +190,13 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(324, 314);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_highlight);
             this.Controls.Add(this.pnl_topBar);
+            this.Controls.Add(this.panel_main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StickyNoteForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_main.ResumeLayout(false);
+            this.panel_main.PerformLayout();
             this.pnl_topBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -192,11 +205,12 @@
         #endregion
         private TextBox txt_mainNote;
         private Button btn_delete;
-        private Panel panel1;
+        private Panel panel_main;
         private Panel pnl_topBar;
         private Button btn_pin;
         private Button btn_add;
         private ImageList imgList_toolbar;
         private Button btn_save;
+        private Panel pnl_highlight;
     }
 }

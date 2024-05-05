@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace SimpleNotes
@@ -23,9 +23,17 @@ namespace SimpleNotes
             {
                 txt_mainNote.ReadOnly = !value;
                 if (value)
+                {
                     btn_save.Show();
+                    pnl_highlight.Hide();
+                    pnl_topBar.Show();
+                }
                 else
+                {
                     btn_save.Hide();
+                    pnl_topBar.Hide();
+                    pnl_highlight.Show();
+                }
             }
         }
         private bool IsPinned
@@ -42,6 +50,7 @@ namespace SimpleNotes
         public StickyNoteForm(string noteContent = "", bool canEdit = true)
         {
             InitializeComponent();
+
             txt_mainNote.Text = noteContent;
             IsEditable = canEdit;
         }
@@ -88,6 +97,23 @@ namespace SimpleNotes
         private void saveNote()
         {
             IsEditable = false;
+        }
+
+
+        private void pnl_topBar_MouseLeave(object? sender, EventArgs e)
+        {
+            if (!IsEditable)
+            {
+                pnl_topBar.Hide();
+                pnl_highlight.Show();
+            }
+        }
+
+
+        private void pnl_highlight_MouseEnter(object sender, EventArgs e)
+        {
+            pnl_highlight.Hide();
+            pnl_topBar.Show();
         }
     }
 }
