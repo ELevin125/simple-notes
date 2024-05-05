@@ -22,6 +22,19 @@ namespace SimpleNotes
             set
             {
                 txt_mainNote.ReadOnly = !value;
+                if (value)
+                    btn_save.Show();
+                else
+                    btn_save.Hide();
+            }
+        }
+        private bool IsPinned
+        {
+            get { return TopMost; }
+            set
+            {
+                TopMost = !TopMost;
+                btn_pin.ImageKey = value ? "unpin.png" : "pin.png";
             }
         }
 
@@ -29,14 +42,13 @@ namespace SimpleNotes
         public StickyNoteForm(string noteContent = "", bool canEdit = true)
         {
             InitializeComponent();
-            ActiveControl = txt_mainNote;
             txt_mainNote.Text = noteContent;
             IsEditable = canEdit;
         }
 
         private void pnl_topBar_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && !IsPinned)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
@@ -50,18 +62,32 @@ namespace SimpleNotes
 
         private void btn_pin_Click(object sender, EventArgs e)
         {
-            TopMost = !TopMost;
-            btn_pin.BackgroundImage = TopMost ? global::SimpleNotes.Properties.Resources.unpin : global::SimpleNotes.Properties.Resources.pin;
+            IsPinned = !IsPinned;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_mainNote.Text)) return;
 
-            var stickyNoteForm = new StickyNoteForm(txt_mainNote.Text, false);
+            var stickyNoteForm = new StickyNoteForm();
             stickyNoteForm.Show();
 
-            txt_mainNote.Text = "";
+            saveNote();
+        }
+
+        private void txt_mainNote_DoubleClick(object sender, EventArgs e)
+        {
+            IsEditable = true;
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            saveNote();
+        }
+        
+        private void saveNote()
+        {
+            IsEditable = false;
         }
     }
 }
