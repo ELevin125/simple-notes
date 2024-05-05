@@ -51,11 +51,13 @@ namespace SimpleNotes
         private void btn_pin_Click(object sender, EventArgs e)
         {
             TopMost = !TopMost;
-            btn_pin.Image = TopMost ? global::SimpleNotes.Properties.Resources.unpin : global::SimpleNotes.Properties.Resources.pin;
+            btn_pin.BackgroundImage = TopMost ? global::SimpleNotes.Properties.Resources.unpin : global::SimpleNotes.Properties.Resources.pin;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txt_mainNote.Text)) return;
+
             var stickyNoteForm = new StickyNoteForm(txt_mainNote.Text, false);
             stickyNoteForm.Show();
 
