@@ -5,6 +5,11 @@ namespace SimpleNotes
 {
     public partial class StickyNoteForm : Form
     {
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+        [DllImport("user32.dll")]
+        static extern bool ShowCaret(IntPtr hWnd);
+
         // Custom window draggin variables
         private bool isDragging = false;
         private int offsetX, offsetY;
@@ -80,6 +85,7 @@ namespace SimpleNotes
         private void txt_mainNote_DoubleClick(object sender, EventArgs e)
         {
             IsEditable = true;
+            ShowCaret(txt_mainNote.Handle);
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -120,6 +126,13 @@ namespace SimpleNotes
         private void pnl_topBar_MouseUp(object sender, MouseEventArgs e)
         {
             isDragging = false;
+        }
+
+        private void txt_mainNote_GotFocused(object sender, EventArgs e)
+        {
+            if (!IsEditable)
+                HideCaret(txt_mainNote.Handle);
+                
         }
 
         private void pnl_topBar_MouseDown(object sender, MouseEventArgs e)

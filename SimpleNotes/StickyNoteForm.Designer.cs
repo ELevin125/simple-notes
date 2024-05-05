@@ -58,6 +58,7 @@
             this.txt_mainNote.TabIndex = 1;
             this.txt_mainNote.TabStop = false;
             this.txt_mainNote.DoubleClick += new System.EventHandler(this.txt_mainNote_DoubleClick);
+            this.txt_mainNote.GotFocus += new System.EventHandler(this.txt_mainNote_GotFocused);
             // 
             // btn_delete
             // 
