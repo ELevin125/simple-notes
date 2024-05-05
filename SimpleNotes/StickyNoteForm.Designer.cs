@@ -113,8 +113,10 @@
             this.pnl_topBar.Name = "pnl_topBar";
             this.pnl_topBar.Size = new System.Drawing.Size(325, 26);
             this.pnl_topBar.TabIndex = 13;
+            this.pnl_topBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseDown);
             this.pnl_topBar.MouseLeave += new System.EventHandler(this.pnl_topBar_MouseLeave);
             this.pnl_topBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseMove);
+            this.pnl_topBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseUp);
             // 
             // btn_save
             // 

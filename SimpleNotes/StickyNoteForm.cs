@@ -5,15 +5,9 @@ namespace SimpleNotes
 {
     public partial class StickyNoteForm : Form
     {
-        // Constants for window movement
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
+        // Custom window draggin variables
+        private bool isDragging = false;
+        private int offsetX, offsetY;
 
         // Variables related to form
         private bool IsEditable
@@ -25,14 +19,12 @@ namespace SimpleNotes
                 if (value)
                 {
                     btn_save.Show();
-                    pnl_highlight.Hide();
-                    pnl_topBar.Show();
+                    showTopBar();
                 }
                 else
                 {
                     btn_save.Hide();
-                    pnl_topBar.Hide();
-                    pnl_highlight.Show();
+                    hideTopBar();
                 }
             }
         }
@@ -57,10 +49,11 @@ namespace SimpleNotes
 
         private void pnl_topBar_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && !IsPinned)
+            if (isDragging)
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                Point newLocation = this.PointToScreen(new Point(e.X, e.Y));
+                newLocation.Offset(-offsetX, -offsetY);
+                Location = newLocation;
             }
         }
 
@@ -103,17 +96,41 @@ namespace SimpleNotes
         private void pnl_topBar_MouseLeave(object? sender, EventArgs e)
         {
             if (!IsEditable)
-            {
-                pnl_topBar.Hide();
-                pnl_highlight.Show();
-            }
+                hideTopBar();
         }
 
 
         private void pnl_highlight_MouseEnter(object sender, EventArgs e)
         {
+            showTopBar();
+        }
+
+        private void showTopBar()
+        {
             pnl_highlight.Hide();
             pnl_topBar.Show();
+        }
+
+        private void hideTopBar()
+        {
+            pnl_topBar.Hide();
+            pnl_highlight.Show();
+        }
+
+        private void pnl_topBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void pnl_topBar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left && !IsPinned)
+            {
+                isDragging = true;
+                offsetX = e.X;
+                offsetY = e.Y;
+            }
         }
     }
 }
