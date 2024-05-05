@@ -15,11 +15,23 @@ namespace SimpleNotes
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public StickyNoteForm(string title, string mainNote)
+        // Variables related to form
+        private bool IsEditable
+        {
+            get { return !txt_mainNote.ReadOnly; }
+            set
+            {
+                txt_mainNote.ReadOnly = !value;
+            }
+        }
+
+
+        public StickyNoteForm(string noteContent = "", bool canEdit = true)
         {
             InitializeComponent();
-            txt_title.Text = title;
-            txt_mainNote.Text = mainNote;
+            ActiveControl = txt_mainNote;
+            txt_mainNote.Text = noteContent;
+            IsEditable = canEdit;
         }
 
         private void pnl_topBar_MouseMove(object sender, MouseEventArgs e)
@@ -40,6 +52,14 @@ namespace SimpleNotes
         {
             TopMost = !TopMost;
             btn_pin.Image = TopMost ? global::SimpleNotes.Properties.Resources.unpin : global::SimpleNotes.Properties.Resources.pin;
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            var stickyNoteForm = new StickyNoteForm(txt_mainNote.Text, false);
+            stickyNoteForm.Show();
+
+            txt_mainNote.Text = "";
         }
     }
 }
