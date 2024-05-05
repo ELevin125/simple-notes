@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickyNoteForm));
             this.txt_mainNote = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.imgList_toolbar = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_topBar = new System.Windows.Forms.Panel();
-            this.btn_pin = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.imgList_toolbar = new System.Windows.Forms.ImageList(this.components);
+            this.btn_pin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_topBar.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.txt_mainNote.Multiline = true;
             this.txt_mainNote.Name = "txt_mainNote";
             this.txt_mainNote.PlaceholderText = "Note";
-            this.txt_mainNote.Size = new System.Drawing.Size(305, 267);
+            this.txt_mainNote.Size = new System.Drawing.Size(305, 271);
             this.txt_mainNote.TabIndex = 1;
             this.txt_mainNote.TabStop = false;
             // 
@@ -75,14 +75,25 @@
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // imgList_toolbar
+            // 
+            this.imgList_toolbar.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imgList_toolbar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList_toolbar.ImageStream")));
+            this.imgList_toolbar.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList_toolbar.Images.SetKeyName(0, "add.png");
+            this.imgList_toolbar.Images.SetKeyName(1, "pin.png");
+            this.imgList_toolbar.Images.SetKeyName(2, "unpin.png");
+            this.imgList_toolbar.Images.SetKeyName(3, "close.png");
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
             this.panel1.Controls.Add(this.txt_mainNote);
-            this.panel1.Location = new System.Drawing.Point(0, 29);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(325, 287);
+            this.panel1.Size = new System.Drawing.Size(325, 291);
             this.panel1.TabIndex = 11;
             // 
             // pnl_topBar
@@ -97,25 +108,6 @@
             this.pnl_topBar.Size = new System.Drawing.Size(325, 26);
             this.pnl_topBar.TabIndex = 13;
             this.pnl_topBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_topBar_MouseMove);
-            // 
-            // btn_pin
-            // 
-            this.btn_pin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_pin.BackColor = System.Drawing.Color.LightCyan;
-            this.btn_pin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_pin.FlatAppearance.BorderSize = 0;
-            this.btn_pin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pin.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_pin.ImageKey = "pin.png";
-            this.btn_pin.ImageList = this.imgList_toolbar;
-            this.btn_pin.Location = new System.Drawing.Point(275, 0);
-            this.btn_pin.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_pin.Name = "btn_pin";
-            this.btn_pin.Size = new System.Drawing.Size(25, 25);
-            this.btn_pin.TabIndex = 14;
-            this.btn_pin.TabStop = false;
-            this.btn_pin.UseVisualStyleBackColor = false;
-            this.btn_pin.Click += new System.EventHandler(this.btn_pin_Click);
             // 
             // btn_add
             // 
@@ -136,15 +128,24 @@
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // imgList_toolbar
+            // btn_pin
             // 
-            this.imgList_toolbar.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imgList_toolbar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList_toolbar.ImageStream")));
-            this.imgList_toolbar.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgList_toolbar.Images.SetKeyName(0, "add.png");
-            this.imgList_toolbar.Images.SetKeyName(1, "pin.png");
-            this.imgList_toolbar.Images.SetKeyName(2, "unpin.png");
-            this.imgList_toolbar.Images.SetKeyName(3, "close.png");
+            this.btn_pin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pin.BackColor = System.Drawing.Color.LightCyan;
+            this.btn_pin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_pin.FlatAppearance.BorderSize = 0;
+            this.btn_pin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pin.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_pin.ImageKey = "pin.png";
+            this.btn_pin.ImageList = this.imgList_toolbar;
+            this.btn_pin.Location = new System.Drawing.Point(275, 0);
+            this.btn_pin.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_pin.Name = "btn_pin";
+            this.btn_pin.Size = new System.Drawing.Size(25, 25);
+            this.btn_pin.TabIndex = 14;
+            this.btn_pin.TabStop = false;
+            this.btn_pin.UseVisualStyleBackColor = false;
+            this.btn_pin.Click += new System.EventHandler(this.btn_pin_Click);
             // 
             // StickyNoteForm
             // 
