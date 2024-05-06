@@ -98,6 +98,7 @@
             this.rtxt_mainText.TabIndex = 0;
             this.rtxt_mainText.Text = "";
             this.rtxt_mainText.DoubleClick += new System.EventHandler(this.rtxt_mainText_DoubleClick);
+            this.rtxt_mainText.Click += new System.EventHandler(this.rtxt_mainText_Click);
             // 
             // pnl_topBar
             // 

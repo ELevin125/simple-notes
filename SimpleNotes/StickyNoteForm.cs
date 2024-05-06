@@ -90,6 +90,11 @@ namespace SimpleNotes
             IsEditable = true;
             ShowCaret(rtxt_mainText.Handle);
         }
+        private void rtxt_mainText_Click(object sender, EventArgs e)
+        {
+            if (!IsEditable)
+                HideCaret(rtxt_mainText.Handle);
+        }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -131,12 +136,6 @@ namespace SimpleNotes
             isDragging = false;
         }
 
-        private void txt_mainNote_GotFocused(object sender, EventArgs e)
-        {
-            if (!IsEditable)
-                HideCaret(rtxt_mainText.Handle);
-                
-        }
 
         private void pnl_topBar_MouseDown(object sender, MouseEventArgs e)
         {
