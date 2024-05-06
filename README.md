@@ -12,8 +12,8 @@ This is a simple sticky note application with no unnecessary bells and whistles 
 
 1. **Creating a Note**: Click on the `Add New (+)` button to create a new sticky note.
 2. **Editing a Note**: Double-click on a note to enter edit mode. Click `Save` button or `Add New` buttont to save changes.
-3. **Pinning a Note**: Click on the pin icon to pin/unpin a note. Pinned notes can't be moved and will be displayed over other windows.
-4. **Deleting a Note**: Click on the `delete (X)` button to remove a note.
+3. **Pinning a Note**: Click on the `Pin` button to pin/unpin a note. Pinned notes can't be moved and will be displayed over other windows.
+4. **Deleting a Note**: Click on the `Delete (X)` button to remove a note.
 
 ## Compilation Instructions
 
