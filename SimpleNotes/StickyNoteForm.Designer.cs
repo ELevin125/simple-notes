@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StickyNoteForm));
-            this.txt_mainNote = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.imgList_toolbar = new System.Windows.Forms.ImageList(this.components);
             this.panel_main = new System.Windows.Forms.Panel();
+            this.rtxt_mainText = new System.Windows.Forms.RichTextBox();
             this.pnl_topBar = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
@@ -42,23 +42,6 @@
             this.panel_main.SuspendLayout();
             this.pnl_topBar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txt_mainNote
-            // 
-            this.txt_mainNote.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_mainNote.BackColor = System.Drawing.Color.LightCyan;
-            this.txt_mainNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_mainNote.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_mainNote.Location = new System.Drawing.Point(10, 10);
-            this.txt_mainNote.Margin = new System.Windows.Forms.Padding(10);
-            this.txt_mainNote.Multiline = true;
-            this.txt_mainNote.Name = "txt_mainNote";
-            this.txt_mainNote.PlaceholderText = "Note";
-            this.txt_mainNote.Size = new System.Drawing.Size(305, 271);
-            this.txt_mainNote.TabIndex = 1;
-            this.txt_mainNote.TabStop = false;
-            this.txt_mainNote.DoubleClick += new System.EventHandler(this.txt_mainNote_DoubleClick);
-            this.txt_mainNote.GotFocus += new System.EventHandler(this.txt_mainNote_GotFocused);
             // 
             // btn_delete
             // 
@@ -93,7 +76,7 @@
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.Color.LightCyan;
-            this.panel_main.Controls.Add(this.txt_mainNote);
+            this.panel_main.Controls.Add(this.rtxt_mainText);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_main.Location = new System.Drawing.Point(0, 25);
             this.panel_main.Margin = new System.Windows.Forms.Padding(0);
@@ -101,6 +84,20 @@
             this.panel_main.Padding = new System.Windows.Forms.Padding(10);
             this.panel_main.Size = new System.Drawing.Size(324, 289);
             this.panel_main.TabIndex = 11;
+            // 
+            // rtxt_mainText
+            // 
+            this.rtxt_mainText.BackColor = System.Drawing.Color.LightCyan;
+            this.rtxt_mainText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxt_mainText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtxt_mainText.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rtxt_mainText.Location = new System.Drawing.Point(10, 10);
+            this.rtxt_mainText.Name = "rtxt_mainText";
+            this.rtxt_mainText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtxt_mainText.Size = new System.Drawing.Size(304, 269);
+            this.rtxt_mainText.TabIndex = 0;
+            this.rtxt_mainText.Text = "";
+            this.rtxt_mainText.DoubleClick += new System.EventHandler(this.rtxt_mainText_DoubleClick);
             // 
             // pnl_topBar
             // 
@@ -199,14 +196,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StickyNoteForm";
             this.panel_main.ResumeLayout(false);
-            this.panel_main.PerformLayout();
             this.pnl_topBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private TextBox txt_mainNote;
         private Button btn_delete;
         private Panel panel_main;
         private Panel pnl_topBar;
@@ -215,5 +210,6 @@
         private ImageList imgList_toolbar;
         private Button btn_save;
         private Panel pnl_highlight;
+        private RichTextBox rtxt_mainText;
     }
 }

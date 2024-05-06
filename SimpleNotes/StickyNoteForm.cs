@@ -17,10 +17,10 @@ namespace SimpleNotes
         // Variables related to form
         private bool IsEditable
         {
-            get { return !txt_mainNote.ReadOnly; }
+            get { return !rtxt_mainText.ReadOnly; }
             set
             {
-                txt_mainNote.ReadOnly = !value;
+                rtxt_mainText.ReadOnly = !value;
                 if (value)
                 {
                     btn_save.Show();
@@ -48,7 +48,7 @@ namespace SimpleNotes
         {
             InitializeComponent();
 
-            txt_mainNote.Text = noteContent;
+            rtxt_mainText.Text = noteContent;
             IsEditable = canEdit;
 
             StickyNoteManager.AddOpenStickyNoteForm(this);
@@ -77,7 +77,7 @@ namespace SimpleNotes
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_mainNote.Text)) return;
+            if (string.IsNullOrWhiteSpace(rtxt_mainText.Text)) return;
 
             var stickyNoteForm = new StickyNoteForm();
             stickyNoteForm.Show();
@@ -85,10 +85,10 @@ namespace SimpleNotes
             saveNote();
         }
 
-        private void txt_mainNote_DoubleClick(object sender, EventArgs e)
+        private void rtxt_mainText_DoubleClick(object sender, EventArgs e)
         {
             IsEditable = true;
-            ShowCaret(txt_mainNote.Handle);
+            ShowCaret(rtxt_mainText.Handle);
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace SimpleNotes
         private void txt_mainNote_GotFocused(object sender, EventArgs e)
         {
             if (!IsEditable)
-                HideCaret(txt_mainNote.Handle);
+                HideCaret(rtxt_mainText.Handle);
                 
         }
 
